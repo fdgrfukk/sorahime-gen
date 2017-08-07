@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+
+<head prefix="og: http://ogp.me/ns#">
+
+	<meta charset="utf8">
+	<title>ソラヒメドロップ画像 ロジェネレーター</title>
+	<!-- ogp -->
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="ソラヒメドロップ画像 ジェネレーター">
+	<meta property="og:url" content="https://fdgrfukk.github.io/sorahime-gen/">
+	<meta property="og:image" content="https://fdgrfukk.github.io/sorahime-gen/ogpcard.png">
+	<meta property="og:title" content="ソラヒメドロップ画像 ジェネレーター">
+	<meta property="og:description" content="司令官！ 新しい子がいらしたみたいですよ！">
+	<!-- /ogp -->
+	<!-- twitter-cards -->
+	<meta name="twitter:card" content="Large Image Summary Card" />
+	<meta name="twitter:site" content="@fdgrfukk" />
+	<meta name="twitter:title" content="ソラヒメドロップ画像 ジェネレーター" />
+	<meta name="twitter:description" content="司令官！ 新しい子がいらしたみたいですよ！" />
+	<meta name="twitter:image" content="https://fdgrfukk.github.io/sorahime-gen/ogpcard.png" />
+	<meta name="twitter:alt" content="Sorahime Drop Image Generator" />
+	<link rel="icon" href="scimitar_icon.png">
+	<!-- /twitter-cards -->
+
+	<link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet" />
+	<link rel="stylesheet" href="index.css">
+
+	<script src="index.js"></script>
+	<script src="canvas-toBlob.js"></script>
+	<script src="FileSaver.js"></script>
+
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-104152658-1', 'auto');
+	ga('send', 'pageview');
+
+	</script>
+</head>
+<body>
+	<div id="bg" class="container sorahime">
+		<h1>ソラヒメドロップ画像 ジェネレーター</h1>
+		<div id="canvas-container">
+
+		</div>
+		<div class="flex-col">
+			<div class="preview noselect">
+
+				<img id="result" />
+			</div>
+
+			<div class="inputs">
+				<p>1. 背景画像を選択しよう！</p>
+				<span>■　レア度</span>
+				<div class="radio rare">
+					<input type="radio" name="s1" id="rare1" value="1" checked="">
+					<label for="rare1">☆1</label>
+					<input type="radio" name="s1" id="rare2" value="2">
+					<label for="rare2">☆2</label>
+					<input type="radio" name="s1" id="rare3" value="3">
+					<label for="rare3">☆3</label>
+					<input type="radio" name="s1" id="rare4" value="4">
+					<label for="rare4">☆4</label>
+					<input type="radio" name="s1" id="rare5" value="5">
+					<label for="rare5">☆5</label>
+				</div>
+				<span>■　タイプ</span>
+				<div class="radio type">
+					<input type="radio" name="s2" id="type1" value="fighter" checked="">
+					<label for="type1">格闘</label>
+					<input type="radio" name="s2" id="type2" value="assault">
+					<label for="type2">突撃</label>
+					<input type="radio" name="s2" id="type3" value="sniper">
+					<label for="type3">狙撃</label>
+					<input type="radio" name="s2" id="type4" value="striker">
+					<label for="type4">強攻</label>
+					<input type="radio" name="s2" id="type5" value="heavy">
+					<label for="type5">重撃</label>
+					<input type="radio" name="s2" id="type6" value="bomber">
+					<label for="type6">爆撃</label>
+					<input type="radio" name="s2" id="type7" value="support">
+					<label for="type7">支援</label>
+				</div>
+			</div>
+			<div class="inputs">
+				<p>2. テキストを入力してね！</p>
+				<input id="name" type="text" placeholder="なまえ" />
+				<input id="words" type="text" placeholder="せりふ" />
+			</div>
+		</div>
+		<div class="flex-row">
+			<div class="upload">
+				<p>3. 画像をアップロードして作成！</p>
+				<div class="uploadButton">
+					画像ファイルを選択してね！
+					<input type="file" id="Upload" accept="image/*" />
+					<!-- <input type="file" id="Upload" onchange="upload(this.value)" accept="image/*" /> -->
+				</div>
+			</div>
+			<div class="download">
+				<p>4. 出来上がった画像をダウンロード！</p>
+				<div class="downloadButton">
+					画像をダウンロード！
+					<button id="download" download="sorahime-drop.png" />
+				</div>
+			</div>
+		</div>
+		<div class="flex-col sns">
+			<h2>画像をみんなにみてもらおう！
+				<a href="https://twitter.com/share" class="twitter-share-button" data-via="fdgrfukk" data-size="large" data-hashtags="ソラヒメドロップ画像ジェネレーター">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</h2>
+		</div>
+		<div class="snsbuttons">
+			<p>他のSNSでもシェア！</p>
+
+			<!-- fb -->
+			<div>
+				<div>
+					<div id="fb-root"></div>
+					<script>(function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0];
+						if (d.getElementById(id)) return;
+						js = d.createElement(s); js.id = id;
+						js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.10&appId=1161291247350149";
+						fjs.parentNode.insertBefore(js, fjs);
+					}(document, 'script', 'facebook-jssdk'));</script>
+					<div class="fb-like" data-href="https://fdgrfukk.github.io/sorahime-gen/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+				</div>
+			</div>
+			<!-- /fb -->
+			<!-- g -->
+			<div>
+				<script src="https://apis.google.com/js/platform.js" async defer>
+				{lang: 'ja'}
+				</script>
+				<div class="g-plusone" data-size="medium"></div>
+			</div>
+			<!-- /g -->
+			<!-- hatena -->
+			<div>
+				<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+			</div>
+			<!-- /hatena -->
+			<!-- line -->
+			<div>
+				<div class="line-it-button" style="display: none;" data-type="share-a" data-lang="ja" ></div>
+				<script src="//scdn.line-apps.com/n/line_it/thirdparty/loader.min.js" async="async" defer="defer" ></script>
+			</div>
+			<!-- /line -->
+		</div>
+
+		<div class="info">
+			<div class="cardArea">
+
+				<div class="thumb">
+					<p>ソラヒメって？</p><a href="https://sorahime.6waves.jp/6waves/" class="thumb-link" target="_blank">
+					<img src="https://sorahime.6waves.jp/6waves/wp-content/themes/pc/images/favicon.png" class="thumb-image" alt="ソラヒメ ACE VIRGIN -銀翼の戦闘姫-"></a>
+				</div>
+					<div class="card-content">
+						<div class="card-description">
+						<p>ソラヒメ ACE VIRGIN -銀翼の戦闘姫- は iOS / Android 向けのゲームとして配信されている、</p>
+						<p>世界の戦闘機を擬人化したゲームです。</p>
+					</div>
+
+					<div class="card-title">
+						<a href="https://sorahime.6waves.jp/6waves/" class="card-title-link" target="_blank">
+							ソラヒメ ACE VIRGIN -銀翼の戦闘姫-
+						</a>
+					</div>
+					<div class="card-excerpt">
+						<p>キャラクターや世界観などがひと味もふた味も違ったゲームです。</p>
+						<p>もしまだゲームをプレイしていないのなら、ぜひこの機会にダウンロードしてみてください！</p>
+					</div>
+				</div>
+				<div class="card-link">
+					<p><div class="box3">
+					<a href="https://itunes.apple.com/jp/app/sorahime-ace-virgin-yin-yino/id1171006737?l=ja&ls=1&mt=8">
+						<img src="apple.png" width="215" height="auto" alt=""/>
+					</a>
+				</div>
+				<div class="box3">
+					<a href="https://play.google.com/store/apps/details?id=com.sixwaves.AVG">
+						<img src="google.png" width="215" height="auto" alt=""/>
+					</a>
+				</div>
+			</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<footer>
+		<p class="foot">
+			Sorahime Drop Image Generator powered by
+			<a class="mplus" target="_blank" href="https://googlefonts.github.io/japanese/#mplus1p">&nbsp;M+ 1p&nbsp;</a><br>
+			and <strong>You a.k.a. Commander !!!</strong>
+		</p>
+		<p><small><small>
+			Author : <a href="https://twitter.com/fdgrfukk">@fdgrfukk</a>
+		</small></small>
+	</p>
+</footer>
+</div>
+</body>
+</html>
