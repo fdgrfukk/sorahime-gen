@@ -246,12 +246,12 @@ uploadbtn.addEventListener('change', uploadImage, false);
 
 function randombg(){
 	var random= Math.floor(Math.random() * 11) + 0;
-	var bigSize = ['url(img/bg/bg1.png)', 'url(img/bg/bg2.png)',
-	'url(img/bg/bg3.png)', 'url(img/bg/bg4.png)',
-	'url(img/bg/bg5.png)', 'url(img/bg/bg6.png)',
-	'url(img/bg/bg7.png)', 'url(img/bg/bg8.png)',
-	'url(img/bg/bg9.png)', 'url(img/bg/bg10.png)',
-	'url(img/bg/bg11.png)'];
+	var bigSize = ['url(img/bg/bg1.jpg)', 'url(img/bg/bg2.jpg)',
+	'url(img/bg/bg3.jpg)', 'url(img/bg/bg4.jpg)',
+	'url(img/bg/bg5.jpg)', 'url(img/bg/bg6.jpg)',
+	'url(img/bg/bg7.jpg)', 'url(img/bg/bg8.jpg)',
+	'url(img/bg/bg9.jpg)', 'url(img/bg/bg10.jpg)',
+	'url(img/bg/bg11.jpg)'];
 
 	bgimage.style.backgroundImage=bigSize[random];
 }
