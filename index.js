@@ -22,6 +22,8 @@ window.onload = function(){
 		var BG = getSelected();
 		//var imgs = { 1: BG, 2: imgfile, 3: imgwindow };
 
+		sources = [];
+
 		if ( !imgfilePath ){
 			sources = [ BG, imgwindow ];
 		} else {
